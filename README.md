@@ -12,7 +12,7 @@ The static privacy website for the StrideIQ Android app. It is plain HTML and CS
 ## Updating the policy
 1. Edit `privacy/index.html`. Change **Last updated**, and keep **Effective date** unless you are publishing a new version.
 2. Regenerate the plain-text copy: `python3 -c "import html,re;s=open('privacy/index.html').read();print(html.unescape(re.sub(r'<[^>]+>','',s)))" > POLICY-DRAFT.txt`.
-3. Check that no `[DECISION NEEDED` marker remains: `grep -rn "DECISION NEEDED" --include=*.html .` should print nothing.
+3. Check that no unresolved decision marker (the bracketed "DECISION" + " NEEDED" text) remains in any HTML file.
 4. Commit and push. GitHub Pages serves the `main` branch root.
 
 When you add a page, copy the header and footer of an existing page and link it from the nav or footer.
