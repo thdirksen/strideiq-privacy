@@ -17,7 +17,7 @@
 </div></header>
 <main id="main"><div class="wrap">
 <h1>StrideIQ Privacy Policy</h1>
-<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> October 30, 2026<br>
+<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> November 9, 2026<br>
 App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) · Developer: Tervaro</p>
 <div class="note"><p><strong>In short:</strong> StrideIQ stores your health, fitness, nutrition and progress data on your own device. There are no StrideIQ accounts, no ads, no analytics and no tracking. Data leaves your phone only for the optional online features described in sections 4 and 5. We do not sell your data.</p></div>
 <nav class="toc" aria-label="Contents"><ol>
@@ -30,12 +30,13 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <li><strong>Health data:</strong> heart rate and body weight read from Health Connect; heart rate measured by the StrideIQ watch app during workouts you start.</li>
 <li><strong>Phone step counter (optional "Native Beta"):</strong> readings from your phone's built-in step sensor, using the Physical activity permission.</li>
 <li><strong>Watch data (optional):</strong> steps and workouts recorded by the StrideIQ Wear OS app, sent from your watch to your phone directly over the Wear OS connection between your own devices, not through our servers.</li>
+<li><strong>Run location (optional, Wear OS watch):</strong> when you start a run in the StrideIQ watch app and allow location access, the watch records your GPS position (latitude, longitude, accuracy, altitude, speed, direction and time) while the run is in progress, until you finish it. StrideIQ uses it to calculate distance, pace and your route. Before asking for location access the watch app explains this on a "Run GPS" screen; if you choose "Not now" or deny access, the run is recorded without location.</li>
 <li><strong>Samsung Health export files (optional):</strong> if you choose to import a Samsung Health export, StrideIQ reads it on your phone and keeps daily steps, distance, calories, active time, minute step counts, exercise sessions and GPS routes, heart rate, weight and sleep start/end times. Other data in the export is skipped.</li>
 <li><strong>Nutrition data you enter:</strong> meals, foods, recipes, targets, barcode lookups, food search text and food photos.</li>
 <li><strong>Progress photos and body measurements</strong> you take or enter in the app.</li>
 <li><strong>Profile details you choose to enter</strong>, such as date of birth and sex, plus goals and settings.</li>
 </ul>
-<p>StrideIQ has no user accounts, no sign-in and no cloud sync. It does not use your location except as part of exercise routes that are already recorded in Health Connect or a Samsung Health export.</p>
+<p>StrideIQ has no user accounts, no sign-in and no cloud sync. StrideIQ uses your location only (a) during runs you start in the StrideIQ watch app, and (b) as part of exercise routes already recorded in Health Connect or a Samsung Health export. It does not request background location access and does not use location outside a run you started.</p>
 
 <h2 id="s2">2. Health Connect data and permissions</h2>
 <p>StrideIQ only <strong>reads</strong> from Health Connect. It never writes, changes or deletes Health Connect data. It asks for these permissions:</p>
@@ -76,7 +77,7 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <li>your most recent weight and the date it was measured, if available (this weight may come from Health Connect)</li>
 <li>your age in whole years (your date of birth is not sent) and your sex, if you have set them</li>
 </ul>
-Your name, location, routes, photos, notes and device identifiers are not sent. OpenAI returns an estimate, which is stored with the workout on your phone.</li>
+Your name, location (including GPS locations recorded during runs), routes, photos, notes and device identifiers are not sent. OpenAI returns an estimate, which is stored with the workout on your phone.</li>
 <li><strong>Food search and barcodes:</strong> the text you search for and scanned barcode numbers are sent to the StrideIQ service, which looks them up in the U.S. Department of Agriculture's FoodData Central database. Barcode numbers are also sent directly from your phone to Open Food Facts.</li>
 </ul>
 <p>Progress photos, body measurements, Samsung Health imports and Health Connect data other than weight are not sent to any AI service. AI estimates are approximate and are not medical advice.</p>
@@ -87,7 +88,7 @@ Your name, location, routes, photos, notes and device identifiers are not sent. 
 <li><strong>OpenAI</strong> analyses food photos and workout data sent through the StrideIQ service. StrideIQ asks OpenAI not to store the requests and responses (the <code>store: false</code> setting), but we cannot control OpenAI's handling beyond that; OpenAI's own API terms and policies govern what it retains, for example for abuse monitoring: <a href="https://openai.com/policies/">openai.com/policies</a>.</li>
 <li><strong>USDA FoodData Central</strong> receives food search text and barcode numbers from the StrideIQ service.</li>
 <li><strong>Open Food Facts</strong> receives barcode numbers directly from your phone: <a href="https://world.openfoodfacts.org/privacy">world.openfoodfacts.org/privacy</a>.</li>
-<li><strong>OpenStreetMap</strong> map tiles are loaded when you view a route map. The tile server receives your IP address and the map area you view, but not your route data: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</li>
+<li><strong>OpenStreetMap</strong> map tiles are loaded when you view a route map (including, in a later version, runs recorded by the StrideIQ watch app). The tile server receives your IP address and the map area you view, but not your route data: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</li>
 <li><strong>Google</strong> provides Health Connect, the Wear OS connection, the barcode scanner (Google Play services) and, if enabled on your phone, Android backup.</li>
 </ul>
 
@@ -96,15 +97,16 @@ Your name, location, routes, photos, notes and device identifiers are not sent. 
 <ul>
 <li>your step, workout, heart-rate, weight and sleep history</li>
 <li>Native Beta step readings and watch data</li>
+<li>run locations recorded by the watch (stored on the watch and, after they sync over the Wear OS connection between your own devices, on your phone)</li>
 <li>Samsung Health imports</li>
 <li>nutrition logs and food photos</li>
 <li>progress photos and body measurements</li>
 <li>goals and settings</li>
 </ul>
-<p>On the watch, data stays in the watch app until it syncs to your phone.</p>
+<p>On the watch, data stays in the watch app until it has synced to your phone. Run locations are then deleted from the watch automatically once they are more than 30 days old; locations that have not yet reached your phone are never deleted by this clean-up. Other watch data (workout events, heart rate, steps) stays on the watch until you uninstall the watch app or clear its storage.</p>
 <p><strong>Processed outside your device:</strong> only the items listed in section 4, and map tiles (section 5).</p>
-<p><strong>Android backup:</strong> the phone app has Android's automatic backup enabled. Depending on your device's backup settings, Android may include StrideIQ's local app data in your device backup and restore it when you reinstall. This backup is managed by Google under your account settings, and StrideIQ cannot see or delete it. The watch app is excluded from backup.</p>
-<p><strong>Exports:</strong> if you export a backup (JSON) or save an image, the file is written where you choose (e.g. Downloads) and is then under your control.</p>
+<p><strong>Android backup:</strong> the phone app has Android's automatic backup enabled. Depending on your device's backup settings, Android may include StrideIQ's local app data in your device backup and restore it when you reinstall. This can include your workouts and run locations. This backup is managed by Google under your account settings, and StrideIQ cannot see or delete it. The watch app is excluded from backup.</p>
+<p><strong>Exports:</strong> if you export a backup (JSON) or save an image, the file is written where you choose (e.g. Downloads) and is then under your control. A workout export (JSON) includes run locations.</p>
 
 <h2 id="s7">7. Sharing and disclosure</h2>
 <ul>
@@ -123,7 +125,8 @@ Your name, location, routes, photos, notes and device identifiers are not sent. 
 <li>delete all Native Beta data</li>
 <li>delete individual progress photos and body measurements</li>
 </ul>
-Workouts recorded with the StrideIQ watch or phone workout feature currently cannot be deleted one by one in the app.</li>
+Workouts recorded with the StrideIQ watch or phone workout feature currently cannot be deleted one by one in the app. This includes their run locations. "Delete everything" and "Delete Native Beta data" do not remove them.</li>
+<li><strong>On the watch:</strong> run locations are deleted automatically 30 days after they were recorded, but only once your phone has confirmed it stored them. Other watch data stays until you uninstall the watch app or clear its storage.</li>
 <li>
 Clearing the app's storage in Android settings, or uninstalling, removes all StrideIQ data from the phone, including these workouts.</li>
 <li><strong>The StrideIQ service</strong> does not store photos, workout data or heart-rate data. For each request it keeps a short record, used to prevent duplicate processing and to apply usage limits:
@@ -159,6 +162,7 @@ These records are intended to be removed after about three days, but the clean-u
 <ul>
 <li>Grant or revoke Health Connect permissions at any time in Health Connect settings, including background access.</li>
 <li>Camera, physical activity, notifications and "Alarms &amp; reminders" are optional and can be turned off in Android settings. The barcode scanner uses Google's scanner and does not need StrideIQ's camera permission.</li>
+<li>Location on the watch is optional. If you choose "Not now" or deny it, runs still record time and heart rate without GPS. You can change it at any time in the StrideIQ watch app's permission settings on your watch.</li>
 <li>Don't use the online features (section 4) if you don't want data processed outside your device.</li>
 <li>Export, delete or uninstall as described in section 8.</li>
 </ul>
