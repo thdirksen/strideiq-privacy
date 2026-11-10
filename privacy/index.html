@@ -17,11 +17,11 @@
 </div></header>
 <main id="main"><div class="wrap">
 <h1>StrideIQ Privacy Policy</h1>
-<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> November 9, 2026<br>
+<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> November 10, 2026<br>
 App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) · Developer: Tervaro</p>
 <div class="note"><p><strong>In short:</strong> StrideIQ stores your health, fitness, nutrition and progress data on your own device. There are no StrideIQ accounts, no ads, no analytics and no tracking. Data leaves your phone only for the optional online features described in sections 4 and 5. We do not sell your data.</p></div>
 <nav class="toc" aria-label="Contents"><ol>
-<li><a href="#s1">Information StrideIQ accesses and collects</a></li><li><a href="#s2">Health Connect data and permissions</a></li><li><a href="#s3">How we use fitness, health and nutrition information</a></li><li><a href="#s4">Food photos and AI-assisted features</a></li><li><a href="#s5">Third-party service providers</a></li><li><a href="#s6">On-device storage vs. external processing</a></li><li><a href="#s7">Sharing and disclosure</a></li><li><a href="#s8">Retention and deletion</a></li><li><a href="#s9">Security and data transmission</a></li><li><a href="#s10">Your choices and permissions</a></li><li><a href="#s11">Children's privacy</a></li><li><a href="#s12">Changes to this policy</a></li><li><a href="#s13">Contact</a></li></ol></nav>
+<li><a href="#s1">Information StrideIQ accesses and collects</a></li><li><a href="#s2">Health Connect data and permissions</a></li><li><a href="#s3">How we use fitness, health and nutrition information</a></li><li><a href="#s4">AI food analysis and other AI-assisted features</a></li><li><a href="#s5">Third-party service providers</a></li><li><a href="#s6">On-device storage vs. external processing</a></li><li><a href="#s7">Sharing and disclosure</a></li><li><a href="#s8">Retention and deletion</a></li><li><a href="#s9">Security and data transmission</a></li><li><a href="#s10">Your choices and permissions</a></li><li><a href="#s11">Children's privacy</a></li><li><a href="#s12">Changes to this policy</a></li><li><a href="#s13">Contact</a></li></ol></nav>
 
 <h2 id="s1">1. Information StrideIQ accesses and collects</h2>
 <p>Depending on the features you use and the permissions you grant, StrideIQ handles:</p>
@@ -32,7 +32,7 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <li><strong>Watch data (optional):</strong> steps and workouts recorded by the StrideIQ Wear OS app, sent from your watch to your phone directly over the Wear OS connection between your own devices, not through our servers.</li>
 <li><strong>Run location (optional, Wear OS watch):</strong> when you start a run in the StrideIQ watch app and allow location access, the watch records your GPS position (latitude, longitude, accuracy, altitude, speed, direction and time) while the run is in progress, until you finish it. StrideIQ uses it to calculate distance, pace and your route. Before asking for location access the watch app explains this on a "Run GPS" screen; if you choose "Not now" or deny access, the run is recorded without location.</li>
 <li><strong>Samsung Health export files (optional):</strong> if you choose to import a Samsung Health export, StrideIQ reads it on your phone and keeps daily steps, distance, calories, active time, minute step counts, exercise sessions and GPS routes, heart rate, weight and sleep start/end times. Other data in the export is skipped.</li>
-<li><strong>Nutrition data you enter:</strong> meals, foods, recipes, targets, barcode lookups, food search text and food photos.</li>
+<li><strong>Nutrition data you enter:</strong> meals, foods, recipes, targets, barcode lookups, food search text, food descriptions you type for AI food analysis, and food photos.</li>
 <li><strong>Progress photos and body measurements</strong> you take or enter in the app.</li>
 <li><strong>Profile details you choose to enter</strong>, such as date of birth and sex, plus goals and settings.</li>
 </ul>
@@ -65,10 +65,10 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 </ul>
 <p>It is not used for advertising, profiling or marketing, and it is not used to train AI models by us.</p>
 
-<h2 id="s4">4. Food photos and AI-assisted features</h2>
+<h2 id="s4">4. AI food analysis and other AI-assisted features</h2>
 <p>StrideIQ's online features require an access token issued by the developer, entered in the app. Without one, no data is sent to the StrideIQ service or to OpenAI.</p>
 <ul>
-<li><strong>Food photo analysis</strong> (only when you tap Analyze): the photo (JPEG), whether it is a meal or a nutrition label, and any short hint you type are sent to the StrideIQ service, which forwards them to OpenAI to estimate the food and nutrition. The result is returned to your phone.</li>
+<li><strong>AI food analysis</strong> (only when you tap Analyze food): a description of what you ate that you type (up to 1,000 characters), a meal photo (JPEG), or both are sent to the StrideIQ service, which forwards them to OpenAI to estimate the foods and their nutrition. The photo is optional: you can analyze a description alone, a photo alone, or both together as one meal. Only what you entered for that meal is sent. When you scan a barcode and choose to read the nutrition label, only the label photo is sent. The estimate is returned to your phone. Nothing is added to your food log until you tap Save meal. The meal is then saved on your phone together with the description you typed and the AI's notes.</li>
 <li><strong>Workout calorie estimate:</strong> when the online service is configured (an access token has been entered), an estimate request is sent <strong>automatically when a workout recorded with StrideIQ finishes</strong>. There is currently no separate switch for this. It includes:
 <ul>
 <li>the workout type and label</li>
@@ -85,7 +85,7 @@ Your name, location (including GPS locations recorded during runs), routes, phot
 <h2 id="s5">5. Third-party service providers</h2>
 <ul>
 <li><strong>Cloudflare</strong> hosts the StrideIQ service (a Cloudflare Worker) that receives the requests described in section 4. Cloudflare's request logging is enabled for this service. Cloudflare processes the requests and keeps these logs under its own terms and retention, which the app does not change: <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>.</li>
-<li><strong>OpenAI</strong> analyses food photos and workout data sent through the StrideIQ service. StrideIQ asks OpenAI not to store the requests and responses (the <code>store: false</code> setting), but we cannot control OpenAI's handling beyond that; OpenAI's own API terms and policies govern what it retains, for example for abuse monitoring: <a href="https://openai.com/policies/">openai.com/policies</a>.</li>
+<li><strong>OpenAI</strong> analyses the food descriptions, food photos and workout data sent through the StrideIQ service. StrideIQ asks OpenAI not to store the requests and responses (the <code>store: false</code> setting), but we cannot control OpenAI's handling beyond that; OpenAI's own API terms and policies govern what it retains, for example for abuse monitoring: <a href="https://openai.com/policies/">openai.com/policies</a>.</li>
 <li><strong>USDA FoodData Central</strong> receives food search text and barcode numbers from the StrideIQ service.</li>
 <li><strong>Open Food Facts</strong> receives barcode numbers directly from your phone: <a href="https://world.openfoodfacts.org/privacy">world.openfoodfacts.org/privacy</a>.</li>
 <li><strong>OpenStreetMap</strong> map tiles are loaded when you view a route map (including, in a later version, runs recorded by the StrideIQ watch app). The tile server receives your IP address and the map area you view, but not your route data: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</li>
@@ -99,7 +99,7 @@ Your name, location (including GPS locations recorded during runs), routes, phot
 <li>Native Beta step readings and watch data</li>
 <li>run locations recorded by the watch (stored on the watch and, after they sync over the Wear OS connection between your own devices, on your phone)</li>
 <li>Samsung Health imports</li>
-<li>nutrition logs and food photos</li>
+<li>nutrition logs (including the food descriptions you typed for AI food analysis) and food photos</li>
 <li>progress photos and body measurements</li>
 <li>goals and settings</li>
 </ul>
@@ -129,14 +129,14 @@ Workouts recorded with the StrideIQ watch or phone workout feature currently can
 <li><strong>On the watch:</strong> run locations are deleted automatically 30 days after they were recorded, but only once your phone has confirmed it stored them. Other watch data stays until you uninstall the watch app or clear its storage.</li>
 <li>
 Clearing the app's storage in Android settings, or uninstalling, removes all StrideIQ data from the phone, including these workouts.</li>
-<li><strong>The StrideIQ service</strong> does not store photos, workout data or heart-rate data. For each request it keeps a short record, used to prevent duplicate processing and to apply usage limits:
+<li><strong>The StrideIQ service</strong> does not store photos, food descriptions, workout data or heart-rate data. For each request it keeps a short record, used to prevent duplicate processing and to apply usage limits:
 <ul>
 <li>a request ID</li>
-<li>a one-way hash (SHA-256) of the photo or workout data</li>
+<li>a one-way hash (SHA-256) of the photo and/or food description, or of the workout data</li>
 <li>status and timestamps</li>
-<li>the returned estimate text, or an error message</li>
+<li>the returned estimate text, or an error message. For food, the estimate lists the foods and amounts identified, which can reflect what you typed.</li>
 </ul>
-These records are intended to be removed after about three days, but the clean-up currently runs only occasionally, so removal on that schedule is not guaranteed. Daily usage counts (numbers only, no content) are not deleted. When a request fails, the service writes an error log entry containing a request ID, the access token's label and the error message. Cloudflare keeps request logs according to its own retention.</li>
+These records are intended to be removed after about three days, but the clean-up currently runs only occasionally, so removal on that schedule is not guaranteed. Daily usage counts (numbers only, no content) are not deleted. When a request fails, the service writes an error log entry containing a request ID, the access token's label and the error message. It never contains the photo, the food description or workout data. Cloudflare keeps request logs according to its own retention.</li>
 <li><strong>OpenAI and other providers</strong> keep data according to their own policies (section 5); we cannot delete data held by them.</li>
 <li><strong>Not covered by in-app deletion:</strong>
 <ul>
