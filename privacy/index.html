@@ -68,7 +68,7 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <h2 id="s4">4. AI food analysis and other AI-assisted features</h2>
 <p>StrideIQ's online features require an access token issued by the developer, entered in the app. Without one, no data is sent to the StrideIQ service or to OpenAI.</p>
 <ul>
-<li><strong>AI food analysis</strong> (only when you tap Analyze food): a description of what you ate that you type (up to 1,000 characters), a meal photo (JPEG), or both are sent to the StrideIQ service, which forwards them to OpenAI to estimate the foods and their nutrition. The photo is optional: you can analyze a description alone, a photo alone, or both together as one meal. Only what you entered for that meal is sent. When you scan a barcode and choose to read the nutrition label, only the label photo is sent. The estimate is returned to your phone. Nothing is added to your food log until you tap Save meal. The meal is then saved on your phone together with the description you typed and the AI's notes.</li>
+<li><strong>AI food analysis</strong> (only when you tap Analyze food): a description of what you ate that you type (up to 1,000 characters), a meal photo (JPEG), or both are sent to the StrideIQ service, which forwards them to OpenAI to estimate the foods and their nutrition. The StrideIQ service does not store your description or photo; it temporarily keeps the AI-generated result (section 8). The photo is optional: you can analyze a description alone, a photo alone, or both together as one meal. Only what you entered for that meal is sent. When you scan a barcode and choose to read the nutrition label, only the label photo is sent. The estimate is returned to your phone. Nothing is added to your food log until you tap Save meal. The meal is then saved on your phone together with the description you typed and the AI's notes.</li>
 <li><strong>Workout calorie estimate:</strong> when the online service is configured (an access token has been entered), an estimate request is sent <strong>automatically when a workout recorded with StrideIQ finishes</strong>. There is currently no separate switch for this. It includes:
 <ul>
 <li>the workout type and label</li>
@@ -129,14 +129,14 @@ Workouts recorded with the StrideIQ watch or phone workout feature currently can
 <li><strong>On the watch:</strong> run locations are deleted automatically 30 days after they were recorded, but only once your phone has confirmed it stored them. Other watch data stays until you uninstall the watch app or clear its storage.</li>
 <li>
 Clearing the app's storage in Android settings, or uninstalling, removes all StrideIQ data from the phone, including these workouts.</li>
-<li><strong>The StrideIQ service</strong> does not store photos, food descriptions, workout data or heart-rate data. For each request it keeps a short record, used to prevent duplicate processing and to apply usage limits:
+<li><strong>The StrideIQ service</strong> does not store the original photos, food descriptions, workout data or heart-rate data you send. It does temporarily keep a short record of each request, used to prevent duplicate processing and charges and to apply usage limits:
 <ul>
 <li>a request ID</li>
 <li>a one-way hash (SHA-256) of the photo and/or food description, or of the workout data</li>
 <li>status and timestamps</li>
-<li>the returned estimate text, or an error message. For food, the estimate lists the foods and amounts identified, which can reflect what you typed.</li>
+<li>the AI-generated result returned to your phone, or an error message. For food, this result lists the foods, amounts and notes the AI identified, so it can contain information derived from the description you typed or the photo you sent.</li>
 </ul>
-These records are intended to be removed after about three days, but the clean-up currently runs only occasionally, so removal on that schedule is not guaranteed. Daily usage counts (numbers only, no content) are not deleted. When a request fails, the service writes an error log entry containing a request ID, the access token's label and the error message. It never contains the photo, the food description or workout data. Cloudflare keeps request logs according to its own retention.</li>
+These records are kept only temporarily. They are removed by an automatic clean-up that runs from time to time while the service is in use, typically a few days to about a week after the request. Because the clean-up does not run on a fixed schedule, we cannot guarantee deletion by a specific time, and records can remain longer if the service is not used for a while. Daily usage counts (a date and a number, with no food or workout content) are kept and are not removed by this clean-up. When a request fails, the service writes an error log entry containing a request ID, the access token's label and the error message. It never contains the photo, the food description or workout data. Cloudflare keeps request logs according to its own retention.</li>
 <li><strong>OpenAI and other providers</strong> keep data according to their own policies (section 5); we cannot delete data held by them.</li>
 <li><strong>Not covered by in-app deletion:</strong>
 <ul>
