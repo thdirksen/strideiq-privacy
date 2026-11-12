@@ -17,7 +17,7 @@
 </div></header>
 <main id="main"><div class="wrap">
 <h1>StrideIQ Privacy Policy</h1>
-<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> November 10, 2026<br>
+<p class="meta"><strong>Effective date:</strong> October 30, 2026 · <strong>Last updated:</strong> November 12, 2026<br>
 App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) · Developer: Tervaro</p>
 <div class="note"><p><strong>In short:</strong> StrideIQ stores your health, fitness, nutrition and progress data on your own device. There are no StrideIQ accounts, no ads, no analytics and no tracking. Data leaves your phone only for the optional online features described in sections 4 and 5. We do not sell your data.</p></div>
 <nav class="toc" aria-label="Contents"><ol>
@@ -32,6 +32,7 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <li><strong>Watch data (optional):</strong> steps and workouts recorded by the StrideIQ Wear OS app, sent from your watch to your phone directly over the Wear OS connection between your own devices, not through our servers.</li>
 <li><strong>Run location (optional, Wear OS watch):</strong> when you start a run in the StrideIQ watch app and allow location access, the watch records your GPS position (latitude, longitude, accuracy, altitude, speed, direction and time) while the run is in progress, until you finish it. StrideIQ uses it to calculate distance, pace and your route. Before asking for location access the watch app explains this on a "Run GPS" screen; if you choose "Not now" or deny access, the run is recorded without location.</li>
 <li><strong>Samsung Health export files (optional):</strong> if you choose to import a Samsung Health export, StrideIQ reads it on your phone and keeps daily steps, distance, calories, active time, minute step counts, exercise sessions and GPS routes, heart rate, weight and sleep start/end times. Other data in the export is skipped.</li>
+<li><strong>Sleep (optional):</strong> sleep nights you log by hand (bedtime and wake time). If you turn on <strong>automatic sleep estimates</strong> and allow Android's <strong>Usage access</strong> for StrideIQ, the phone app also reads the times your screen turned on and off, the times your phone was unlocked, and the times it was switched off and on, for about the last 9 days, only while StrideIQ is open (see "Sleep tracking and Usage access" in section 3).</li>
 <li><strong>Nutrition data you enter:</strong> meals, foods, recipes, targets, barcode lookups, food search text, food descriptions you type for AI food analysis, and food photos.</li>
 <li><strong>Progress photos and body measurements</strong> you take or enter in the app.</li>
 <li><strong>Profile details you choose to enter</strong>, such as date of birth and sex, plus goals and settings.</li>
@@ -62,8 +63,23 @@ App: StrideIQ for Android and Wear OS (package <code>com.strideiq.app</code>) ·
 <li>Workout history, heart-rate zones and calorie estimates</li>
 <li>Nutrition logging and targets</li>
 <li>Progress photo comparisons and body measurement trends</li>
+<li>Sleep history and averages, and the morning "How did you sleep?" estimate</li>
 </ul>
 <p>It is not used for advertising, profiling or marketing, and it is not used to train AI models by us.</p>
+
+<h3 id="sleep">Sleep tracking and Usage access</h3>
+<p>Sleep tracking is optional. You can log, edit and delete sleep by hand in Evolve → Sleep without giving StrideIQ any permission.</p>
+<p><strong>Automatic sleep estimates</strong> are off until you turn them on. Before Android's Usage access screen opens, StrideIQ shows a screen explaining what is read and why. If you allow Usage access:</p>
+<ul>
+<li><strong>What is read:</strong> only the times your screen turned on and off, the times your phone was unlocked, and the times your phone was switched off and on. On Android versions that allow it, StrideIQ asks Android for these event types only. On other versions Android hands over a wider list of usage events, and StrideIQ's phone code immediately throws away everything except these times, before anything reaches the rest of the app.</li>
+<li><strong>What is not read or kept:</strong> which apps you use, app names, how long you use them, messages, notifications or anything on your screen. These are never stored, logged or sent anywhere.</li>
+<li><strong>When:</strong> only while StrideIQ is open (when you open it or switch back to it). StrideIQ does not run a background service to watch your screen.</li>
+<li><strong>Why:</strong> to estimate when you fell asleep and woke up. StrideIQ looks for the longest stretch without phone use around your usual sleep time (default 11:00 PM–7:00 AM, adjustable in Settings) and shows it as an estimate for you to confirm, edit or dismiss.</li>
+<li><strong>Where:</strong> estimates are made on your phone only. Screen and unlock times are used in memory and are not saved. StrideIQ saves only the resulting sleep night: bedtime and wake time (the estimate and, if you changed it, your corrected times), whether you confirmed it, and a few numbers about the estimate (such as confidence). Sleep data is never sent to StrideIQ's server or to anyone else.</li>
+<li><strong>Turning it off:</strong> switch off Settings → Sleep tracking → Automatic sleep estimates (StrideIQ then stops reading), or turn off Usage access for StrideIQ in Android settings. Manual sleep logging keeps working either way.</li>
+<li><strong>Deleting:</strong> delete or remove a night in Evolve → Sleep, use Settings → Delete range / Delete everything, or clear the app's storage / uninstall the app. Sleep imported from a Samsung Health export is shown in Evolve → Sleep but kept exactly as imported.</li>
+</ul>
+<p>Sleep estimates are approximate. They measure when you stopped and started using your phone, not sleep itself, and are not a medical measurement.</p>
 
 <h2 id="s4">4. AI food analysis and other AI-assisted features</h2>
 <p>StrideIQ's online features require an access token issued by the developer, entered in the app. Without one, no data is sent to the StrideIQ service or to OpenAI.</p>
@@ -95,7 +111,7 @@ Your name, location (including GPS locations recorded during runs), routes, phot
 <h2 id="s6">6. On-device storage vs. external processing</h2>
 <p><strong>Stays on your device:</strong></p>
 <ul>
-<li>your step, workout, heart-rate, weight and sleep history</li>
+<li>your step, workout, heart-rate, weight and sleep history (including manually logged and estimated sleep)</li>
 <li>Native Beta step readings and watch data</li>
 <li>run locations recorded by the watch (stored on the watch and, after they sync over the Wear OS connection between your own devices, on your phone)</li>
 <li>Samsung Health imports</li>
@@ -105,7 +121,7 @@ Your name, location (including GPS locations recorded during runs), routes, phot
 </ul>
 <p>On the watch, data stays in the watch app until it has synced to your phone. Run locations are then deleted from the watch automatically once they are more than 30 days old; locations that have not yet reached your phone are never deleted by this clean-up. Other watch data (workout events, heart rate, steps) stays on the watch until you uninstall the watch app or clear its storage.</p>
 <p><strong>Processed outside your device:</strong> only the items listed in section 4, and map tiles (section 5).</p>
-<p><strong>Android backup:</strong> the phone app has Android's automatic backup enabled. Depending on your device's backup settings, Android may include StrideIQ's local app data in your device backup and restore it when you reinstall. This can include your workouts and run locations. This backup is managed by Google under your account settings, and StrideIQ cannot see or delete it. The watch app is excluded from backup.</p>
+<p><strong>Android backup:</strong> the phone app has Android's automatic backup enabled. Depending on your device's backup settings, Android may include StrideIQ's local app data in your device backup and restore it when you reinstall. This can include your workouts, run locations and sleep history. This backup is managed by Google under your account settings, and StrideIQ cannot see or delete it. The watch app is excluded from backup.</p>
 <p><strong>Exports:</strong> if you export a backup (JSON) or save an image, the file is written where you choose (e.g. Downloads) and is then under your control. A workout export (JSON) includes run locations.</p>
 
 <h2 id="s7">7. Sharing and disclosure</h2>
@@ -163,6 +179,7 @@ These records are kept only temporarily. They are removed by an automatic clean-
 <li>Grant or revoke Health Connect permissions at any time in Health Connect settings, including background access.</li>
 <li>Camera, physical activity, notifications and "Alarms &amp; reminders" are optional and can be turned off in Android settings. The barcode scanner uses Google's scanner and does not need StrideIQ's camera permission.</li>
 <li>Location on the watch is optional. If you choose "Not now" or deny it, runs still record time and heart rate without GPS. You can change it at any time in the StrideIQ watch app's permission settings on your watch.</li>
+<li>Usage access (for automatic sleep estimates) is optional. Turn it off in Settings → Sleep tracking or in Android settings; manual sleep logging keeps working.</li>
 <li>Don't use the online features (section 4) if you don't want data processed outside your device.</li>
 <li>Export, delete or uninstall as described in section 8.</li>
 </ul>
